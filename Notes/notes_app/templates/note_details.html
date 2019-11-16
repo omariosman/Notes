@@ -1,3 +1,8 @@
 <h1>{{note}}</h1>
 
+
+
+<a href="{% url 'notes:note_edit' note.slug %}">Edit the Note</a>
+
+
 <h2>{{note.content}}</h2>
