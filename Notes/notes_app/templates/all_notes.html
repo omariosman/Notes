@@ -1,0 +1,8 @@
+<h1>Welcome ^_^</h1>
+
+<h3>All the notes</h3>
+
+{% for note in all_notes %}
+ <a href="{%  url 'notes:note_details' note.slug %}">{{note}}</a>
+<br>
+{% endfor %}
