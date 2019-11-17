@@ -20,7 +20,7 @@ def note_details(request, slug):
     context = {
         'note' : note
     }
-    return render(request, 'note_details.html', context)
+    return render(request, 'one_note.html', context)
 
 
 def note_add(request):
