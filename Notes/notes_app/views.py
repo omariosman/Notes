@@ -13,7 +13,7 @@ def all_notes(request):
     context = {
         'all_notes' : all_notes
     }
-    return render(request, 'all_notes.html', context)
+    return render(request, 'notes.html', context)
 
 def note_details(request, slug):
     note = Note.objects.get(slug=slug)
