@@ -1,5 +1,12 @@
-<form class="" action="" method="post">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit" class="btn btn-primary">Update Note</button>
-</form>
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="edit_form">
+  <form class="" action="" method="post">
+      {% csrf_token %}
+      {{form}}
+      <button type="submit" class="btn btn-primary">Update Note</button>
+  </form>
+</div>
+{% endblock %}
