@@ -1,11 +1,21 @@
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<form method="post">
-  {% csrf_token %}
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block body %}
+
 <div class="container">
-  {{form}}
-  <button class="btn btn-primary" type="submit">Log In</button>
+  <div class="row">
+    <div class="add_form">
+      <form method="post">
+        {% csrf_token %}
+      <div class="container">
+        {{form}}
+        <button class="btn btn-primary" type="submit">Log In</button>
+      </div>
+      </form>
+    </div>
+  </div>
 </div>
-</form>
+
+{% endblock %}
