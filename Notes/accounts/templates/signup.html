@@ -1,5 +1,7 @@
 
 {% extends "base.html" %}
+{% load bootstrap4 %}
+
 {% block body %}
 
 <div class="container">
@@ -8,7 +10,7 @@
 <form method="post">
   {% csrf_token %}
 <div class="container">
-  {{form}}
+  {% bootstrap_form form %}
   <button class="btn btn-primary" type="submit">Signup</button>
 </div>
 </form>
