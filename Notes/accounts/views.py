@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login
 from .models import Profile
 from django.shortcuts import get_object_or_404
@@ -65,3 +65,21 @@ def edit_profile(request, slug):
     }
 
     return render(request, "edit_profile.html", context)
+
+
+def change_password(request, slug):
+    profile = get_object_or_404(Profile, slug=slug)
+
+    if request.method == 'POST':
+        password_form = PasswordChangeForm(request.user, request.POST)
+        if password_form.is_valid():
+            password_form.save()
+            return redirect('/')
+    else:
+        password_form = PasswordChangeForm(request.user)
+
+
+    context = {
+        "password_form" : password_form
+    }
+    return render(request, "change_password.html", context)

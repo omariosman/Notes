@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^signup/$', views.register, name='register'),
     url(r'^(?P<slug>[-\w]+)$', views.profile, name='profile'),
     url(r'^(?P<slug>[-\w]+)/edit$', views.edit_profile, name='edit_profile'),
+    url(r'^(?P<slug>[-\w]+)/change_password$', views.change_password, name='change_password'),
 ]
