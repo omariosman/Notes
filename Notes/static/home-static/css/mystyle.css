@@ -6,3 +6,11 @@
 .add_form, .edit_form, .modal-body, .common-adjust {
   margin: 100px 50px;
 }
+
+.any-message {
+  margin-top: 85px;
+  text-align: center;
+  padding: 20px 10px;
+  background: #EEE;
+  font-weight: 444;
+}

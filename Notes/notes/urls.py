@@ -22,5 +22,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include('notes_app.urls', namespace = 'notes')),
-    path('accounts/', include('accounts.urls', namespace = 'accounts'))
+    path('accounts/', include('accounts.urls', namespace = 'accounts')),
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -6,6 +6,7 @@
     <div class="edit_form">
       <form class="" action="" method="post">
           {% csrf_token %}
+          {{ form.media }}
           {% bootstrap_form form %}
           <button type="submit" class="btn btn-primary">Update Note</button>
       </form>

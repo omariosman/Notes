@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'notes_app',
     'accounts',
     'bootstrap4',
+    'ckeditor',
 ]
 
 
@@ -128,3 +129,6 @@ STATICFILES_DIRS = [
 MEDIA_URL  = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = '/notes'
+
+#Ckeditor config
+CKEDITOR_UPLOAD_PATH = "uploads/"

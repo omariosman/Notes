@@ -5,4 +5,4 @@
 <a href="{% url 'notes:note_edit' note.slug %}">Edit the Note</a>
 
 
-<h2>{{note.content}}</h2>
+<h2>{{note.content|safe}}</h2>

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Note
 from .forms import NoteForm
-
+from django.contrib import messages
 
 
 import datetime
@@ -31,6 +31,7 @@ def note_add(request):
             new_form = form.save(commit=False)
             new_form.user = request.user
             new_form.save()
+            messages.success(request, 'A new note was added successfully.')
             return redirect('/notes')
     else:
         form = NoteForm()
@@ -51,6 +52,7 @@ def note_edit(request, slug):
             new_form = form.save(commit=False)
             new_form.user = request.user
             new_form.save()
+            messages.success(request, 'A note was updated successfully.')
             return redirect('/notes')
     else:
         form = NoteForm(instance = note)
